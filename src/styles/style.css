@@ -1,0 +1,29 @@
+.bg-yellow{
+    background-color: #FFC700 !important;
+}
+
+.header-text{
+    padding: 0 80px;
+    
+}
+
+.text-price{
+    color: red;
+}
+
+.btn-order{
+    width: 100%;
+}
+
+.text-yellow{
+    color: #FFC700;
+    font-weight: bold;
+}
+
+.btn-nav{
+    background-color: #433434 !important;
+}
+
+.profile-text{
+    margin-top: -20px;
+}
