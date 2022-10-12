@@ -1,19 +1,10 @@
 import { useState } from "react";
-import {
-  Button,
-  Container,
-  Dropdown,
-  Form,
-  Modal,
-  Navbar,
-} from "react-bootstrap";
-import logo from "../assets/logo.svg";
-import cart from "../assets/cart.svg";
-import users from "../assets/users.svg";
+import { Button, Container, Dropdown, Modal, Navbar } from "react-bootstrap"
+import logo from '../assets/logo.svg'
+import users from '../assets/users.svg'
 import { useNavigate } from "react-router-dom";
-import FormAll from "./Atoms/FormAll";
 
-function Navbars() {
+const NavbarsAdmin = () => {
   const navigate = useNavigate();
 
   const handleNavigateToHome = () => {
@@ -77,17 +68,15 @@ function Navbars() {
             ) : (
               <div>
                 <Dropdown>
-                  <img
-                    src={cart}
-                    className="mx-3"
-                    onClick={handleNavigateToOrder}
-                  />
                   <Dropdown.Toggle variant="bg-yellow" id="dropdown-basic">
                     <img src={users} />
                   </Dropdown.Toggle>
                   <Dropdown.Menu>
                     <Dropdown.Item onClick={handleNavigateToProfile}>
-                      Profile
+                      Profile Patner
+                    </Dropdown.Item>
+                    <Dropdown.Item >
+                      Add Product
                     </Dropdown.Item>
                     <Dropdown.Divider />
                     <Dropdown.Item href="#/action-3">Logout</Dropdown.Item>
@@ -106,11 +95,20 @@ function Navbars() {
                 <h2>Login</h2>
               </div>
               <div class="m-3">
-                <FormAll label="Email" type="email" placeholder="email" />
-                <FormAll
-                  label="Password"
+                <input
+                  type="email"
+                  class="form-control"
+                  id="exampleInputEmail1"
+                  aria-describedby="emailHelp"
+                  placeholder="email"
+                />
+              </div>
+              <div class="m-3">
+                <input
                   type="password"
-                  placeholder="Password"
+                  class="form-control"
+                  id="exampleInputPassword1"
+                  placeholder="password"
                 />
               </div>
             </form>
@@ -139,33 +137,54 @@ function Navbars() {
               <div className="text-yellow m-3">
                 <h2>Register</h2>
               </div>
-              <div>
-                <FormAll label="Email" type="email" placeholder="Email" />
-                <FormAll label="Email" type="password" placeholder="password" />
-                <FormAll
-                  label="Full Name"
+              <div class="m-3">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="exampleInputEmail1"
+                  aria-describedby="emailHelp"
+                  placeholder="Email"
+                />
+              </div>
+              <div class="m-3">
+                <input
+                  type="password"
+                  class="form-control"
+                  id="exampleInputPassword1"
+                  placeholder="Password"
+                />
+              </div>
+              <div class="m-3">
+                <input
                   type="text"
+                  class="form-control"
+                  id="exampleInputPassword1"
                   placeholder="Full Name"
                 />
-                <Form.Select aria-label="Default select example m-3">
-                  <option>Gender</option>
-                  <option value="1">Laki-Laki</option>
-                  <option value="2">Perempuan</option>
-                </Form.Select>
-                <FormAll
-                  label="Phone Number"
-                  type="number"
-                  placeholder="Phone Number"
-                  className='mt-3'
+              </div>
+              <div class="m-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="exampleInputPassword1"
+                  placeholder="Gender"
                 />
-                <Form.Select aria-label="Default select example m-3">
-                  <option>Gender</option>
-                  <option value="1">Laki-Laki</option>
-                  <option value="2">Perempuan</option>
-                </Form.Select>
+              </div>
+              <div class="m-3">
+                <input
+                  type="number"
+                  class="form-control"
+                  id="exampleInputPassword1"
+                  placeholder="Phone"
+                />
+              </div>
+              <div class="m-3">
+                <select id="disabledSelect" class="form-select">
+                  <option>As User</option>
+                </select>
               </div>
             </form>
-            <Button onClick={handleCloseRegist} className="btn-order btn-nav mt-3">
+            <Button onClick={handleCloseRegist} className="btn-order btn-nav">
               Register
             </Button>
             <p className="mt-3">
@@ -179,6 +198,6 @@ function Navbars() {
       </div>
     </div>
   );
-}
+};
 
-export default Navbars;
+export default NavbarsAdmin;

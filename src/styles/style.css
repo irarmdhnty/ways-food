@@ -27,3 +27,31 @@
 .profile-text{
     margin-top: -20px;
 }
+
+.btn-finish{
+    background-color: #aff5d8 !important;
+    color: #4bed58 !important;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.border-form{
+    background-color: #ebe1e1 !important;
+    color: white !important;
+}
+
+.btn-map{
+    width: 100%;
+    background-color: #433434 !important;
+}
+
+.input-img{
+    width: 100%;
+    padding: 8px;
+    color: gray !important;
+    border-radius: 8px;
+}
+
+.text-price{
+    color: red;
+}
