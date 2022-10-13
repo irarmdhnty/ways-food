@@ -1,13 +1,17 @@
-import React from "react";
-import { Button, Col, Form, Row } from "react-bootstrap";
+import React, { useState } from "react";
+import { Button, Col, Form, Modal, Row } from "react-bootstrap";
 
 import { useNavigate } from "react-router-dom";
+import FormAll from "./Atoms/FormAll";
+
 import iconFile from "../assets/icon-file.svg";
 import mapIcon from "../assets/map-icon.png";
-import FormAll from "./Atoms/FormAll";
+import mapsImg from "../assets/maps-img.svg";
 
 const FormEdit = () => {
   const navigate = useNavigate();
+
+  const [show, setShow] = useState(false);
 
   return (
     <Form>
@@ -21,14 +25,22 @@ const FormEdit = () => {
           />
         </Col>
         <Col className="col-12 col-md-3">
-          <Form.Group className="mb-3 d-flex" controlId="formBasicEmail" style={{  height: '90%' }}>
+          <Form.Group
+            className="mb-3 d-flex"
+            controlId="formBasicEmail"
+            style={{ height: "90%" }}
+          >
             <Form.Control type="file" placeholder="Attach Image" hidden />
-            <Form.Label className="d-flex align-items-center border-form border-dark input-img border border-1 " >
+            <Form.Label className="d-flex align-items-center border-form border-dark input-img border border-1 ">
               Attach Image
             </Form.Label>
             <img
               src={iconFile}
-              style={{ marginLeft: "-30px", paddingBottom: "8px", width: '20px' }}
+              style={{
+                marginLeft: "-30px",
+                paddingBottom: "8px",
+                width: "20px",
+              }}
             />
           </Form.Group>
         </Col>
@@ -55,17 +67,29 @@ const FormEdit = () => {
           />
         </Col>
         <Col className="col-12 col-md-3">
-          <Button className="btn-map" onClick={() => }>
-            Select On Map
-            <img src={mapIcon} className="ms-3" />
-          </Button>
+          <div>
+            <Button className="btn-map btn-nav p-2 mb-3" style={{ height: '55px' }} onClick={setShow}>
+              Select On Map
+              <img src={mapIcon} className="ms-3" />
+            </Button>
+            <Modal
+              size="xl"
+              show={show}
+              onHide={() => setShow(false)}
+              aria-labelledby="example-modal-sizes-title-lg"
+            >
+              <Modal.Body>
+                <img src={mapsImg} className="w-100" />
+              </Modal.Body>
+            </Modal>
+          </div>
         </Col>
       </Row>
       <div className="d-flex justify-content-end">
         <Button
           className="btn-nav w-25 mt-5 "
           type="submit"
-          onClick={() => navigate('/profile')}
+          onClick={() => navigate("/profile")}
         >
           Save
         </Button>

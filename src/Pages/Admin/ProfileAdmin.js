@@ -2,10 +2,10 @@ import React from 'react'
 import { Button, Card, Col, Container, Row } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
 
-import user from '../assets/user.svg'
-import logoName from '../assets/logo-name.svg'
+import patner from '../../assets/patner-img.svg'
+import logoName from '../../assets/logo-name.svg'
 
-function Profile() {
+function ProfileAdmin() {
     const navigate = useNavigate();
 
     const editProfile = () => {
@@ -15,10 +15,10 @@ function Profile() {
         <Container>
             <Row className='mt-5'>
                 <Col>
-                    <h2 className='mb-5'>My Profile</h2>
+                    <h2 className='mb-5'>My Profile Patner</h2>
                     <Row>
                         <Col>
-                            <img alt='user' src={user}  width='200px'/>
+                            <img alt='user' src={patner}  width='200px'/>
                             <Button className='btn-nav w-75 mt-3' onClick={editProfile}>Edit Profile</Button>
                         </Col>
                         <Col>
@@ -56,8 +56,9 @@ function Profile() {
                     </Card>
                 </Col>
             </Row>
+
         </Container>
     )
 }
 
-export default Profile    
+export default ProfileAdmin    

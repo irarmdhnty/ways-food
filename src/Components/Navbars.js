@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import {
+  Badge,
   Button,
   Container,
   Dropdown,
@@ -7,22 +8,24 @@ import {
   Modal,
   Navbar,
 } from "react-bootstrap";
-import logo from "../assets/logo.svg";
-import cart from "../assets/cart.svg";
-import users from "../assets/users.svg";
 import { Link, useNavigate } from "react-router-dom";
-import FormAll from "./Atoms/FormAll";
+
 import { LoginContext } from "../Contexts/LoginContext";
+import { CartContext } from "../Contexts/CartContext";
 import Login from "./Auth/Login";
 import Register from "./Auth/Register";
 
-import userIcon from '../assets/user-icon.svg'
-import logoutIcon from '../assets/logout-icon.svg'
+import logo from "../assets/logo.svg";
+import cart from "../assets/cart.svg";
+import users from "../assets/users.svg";
+import userIcon from "../assets/user-icon.svg";
+import logoutIcon from "../assets/logout-icon.svg";
 
 function Navbars() {
   const navigate = useNavigate();
 
   const { isLogin, setIsLogin } = useContext(LoginContext);
+  const {dataCart, setDataCart} = useContext(CartContext);
 
   const [showLogin, setShowLogin] = useState(false);
   const [showRegister, setShowRegister] = useState(false);
@@ -31,7 +34,7 @@ function Navbars() {
     <div>
       <Navbar className="bg-yellow" expand="lg">
         <Container className="d-flex ">
-          <Link to="/" style={{ textDecoration: 'none' }}>
+          <Link to="/" style={{ textDecoration: "none" }}>
             <Navbar.Brand>WaysFood</Navbar.Brand>
             <Navbar.Brand>
               <img
@@ -66,22 +69,30 @@ function Navbars() {
                   <img
                     src={cart}
                     className="mx-3"
-                    onClick={() => navigate('/order')}
+                    onClick={() => navigate("/order")}
                   />
+                  <Badge
+                    style={{ width: "25px", height: "20px" }}
+                    className="bg-danger position-absolute badge"
+                  >
+                    {dataCart.length}
+                  </Badge>
                   <Dropdown.Toggle variant="bg-yellow" id="dropdown-basic">
                     <img src={users} />
                   </Dropdown.Toggle>
                   <Dropdown.Menu>
-                    <Dropdown.Item onClick={() => navigate('/profile')}>
+                    <Dropdown.Item onClick={() => navigate("/profile")}>
                       <img className="me-3" src={userIcon} />
                       Profile
                     </Dropdown.Item>
                     <Dropdown.Divider />
-                    <Dropdown.Item onClick={() => {
-                      setIsLogin(false);
-                    }}>
-                    <img className="me-3" src={logoutIcon} />
-                    Logout
+                    <Dropdown.Item
+                      onClick={() => {
+                        setIsLogin(false);
+                      }}
+                    >
+                      <img className="me-3" src={logoutIcon} />
+                      Logout
                     </Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown>
@@ -95,7 +106,7 @@ function Navbars() {
         setShow={setShowLogin}
         setShowRegister={setShowRegister}
       />
-      <Register 
+      <Register
         show={showRegister}
         setShow={setShowRegister}
         setShowLogin={setShowLogin}

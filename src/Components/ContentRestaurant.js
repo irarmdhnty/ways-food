@@ -1,8 +1,10 @@
 import { useNavigate } from "react-router-dom"
 import { Card, Col, Container, Row } from "react-bootstrap"
-import { RestaurantNear } from '../DataDummy/RestaurantNear'
 import { useContext, useState } from "react";
+
+import { RestaurantNear } from '../DataDummy/RestaurantNear'
 import { LoginContext } from "../Contexts/LoginContext";
+
 import Login from "./Auth/Login";
 import Register from "./Auth/Register";
 
@@ -13,7 +15,6 @@ function ContentRestaurant() {
 
     const [showLogin, setShowLogin] = useState(false);
     const [showRegister, setShowRegister] = useState(false);
-
 
     return (
         <Container>

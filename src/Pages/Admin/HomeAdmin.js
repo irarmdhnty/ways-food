@@ -1,6 +1,8 @@
 import React from "react";
-import { Container, Table } from "react-bootstrap";
-import { Transaction } from "../../DataDummy/Transaction";
+import { Button, Container, Table } from "react-bootstrap";
+
+import cancel from '../../assets/cancel.svg';
+import success from '../../assets/success.svg';
 
 function HomeAdmin() {
   return (
@@ -18,16 +20,63 @@ function HomeAdmin() {
           </tr>
         </thead>
         <tbody>
-          {Transaction.map((item, index) => (
-            <tr key={index}>
-              <td>{index + 1}</td>
-              <td>{item.name}</td>
-              <td>{item.address}</td>
-              <td>{item.order}</td>
-              <td>{item.status}</td>
-              <td>action</td>
+            <tr>
+              <td>1</td>
+              <td>Sugeng No Pants</td>
+              <td>Cileungsi</td>
+              <td>Pkaket Geprek, Paket ke..</td>
+              <td className="d-flex text-warning justify-content-center">Waiting Approve</td>
+              <td>
+                <div className="d-flex justify-content-center">
+                  <Button
+                    variant="danger"
+                    size="sm"
+                    className="btn-table1 me-3"
+                  >
+                    Cancel
+                  </Button>
+                  <Button variant="success" size="sm" className="btn-table2">
+                    Approve
+                  </Button>
+                </div>
+              </td>
             </tr>
-          ))}
+            <tr>
+              <td>2</td>
+              <td>Sugeng No Pants</td>
+              <td>Cileungsi</td>
+              <td>Pkaket Geprek, Paket ke..</td>
+              <td className="d-flex text-success justify-content-center">Success</td>
+              <td>
+                <div className="d-flex text-success justify-content-center">
+                  <img src={success} />
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Sugeng No Pants</td>
+              <td>Cileungsi</td>
+              <td>Pkaket Geprek, Paket ke..</td>
+              <td className="d-flex text-danger justify-content-center">Cancel</td>
+              <td>
+                <div className="d-flex text-success justify-content-center">
+                  <img src={cancel} />
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Sugeng No Pants</td>
+              <td>Cileungsi</td>
+              <td>Pkaket Geprek, Paket ke..</td>
+              <td className="d-flex justify-content-center" style={{ color: '#00D1FF' }}>Success</td>
+              <td>
+                <div className="d-flex text-success justify-content-center">
+                  <img src={success} />
+                </div>
+              </td>
+            </tr>
         </tbody>
       </Table>
     </Container>

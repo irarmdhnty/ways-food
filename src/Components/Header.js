@@ -1,4 +1,5 @@
 import { Col, Container, Row } from "react-bootstrap"
+
 import pizza from '../assets/logo-pizza.svg'
 import strips from '../assets/strips.svg'
 

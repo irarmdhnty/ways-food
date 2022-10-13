@@ -1,19 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Button,
   Card,
   Col,
   Container,
   Form,
+  Modal,
   Row,
   Stack,
 } from "react-bootstrap";
 
-import mapIcon from "../assets/map-icon.png";
-import trash from "../assets/trash-icon.svg";
 import { carts } from "../DataDummy/Cart";
 
+import mapsImg from "../assets/maps-img.svg";
+import mapsOder from '../assets/maps-order.svg'
+import mapIcon from "../assets/map-icon.png";
+import trash from "../assets/trash-icon.svg";
+
 function Order() {
+  const [show, setShow] = useState(false);
+  const [showOrder, setShowOrder] = useState(false);
+
   return (
     <Container>
       <h2 className="mt-5 mb-4">Geprek Bensu</h2>
@@ -27,9 +34,22 @@ function Order() {
           />
         </Form.Group>
         <Form.Group className="col-12 col-lg-3">
-          <Button type="submit" className="btn-map btn-nav p-2 mb-3">
-            Select on Map <img src={mapIcon} alt="asfdfa"></img>
-          </Button>
+          <div>
+            <Button className="btn-map btn-nav p-2 mb-3" onClick={setShow}>
+              Select On Map
+              <img src={mapIcon} className="ms-3" />
+            </Button>
+            <Modal
+              size="xl"
+              show={show}
+              onHide={() => setShow(false)}
+              aria-labelledby="example-modal-sizes-title-lg"
+            >
+              <Modal.Body>
+                <img src={mapsImg} className="w-100" />
+              </Modal.Body>
+            </Modal>
+          </div>
         </Form.Group>
       </Form>
       <div className="mt-4">
@@ -103,7 +123,6 @@ function Order() {
               </Row>
               <hr />
             </Col>
-
             <Col>
               <Row className="d-flex align-items-center">
                 <Col>
@@ -120,7 +139,22 @@ function Order() {
             </Col>
           </Col>
         </Row>
-        <Button className="btn-nav px-5 f-14 fw-bold float-end my-3">Order</Button>
+
+        <div>
+        <Button className="btn-nav px-5 f-14 fw-bold float-end my-3 w-25" onClick={setShowOrder}>
+          Order
+        </Button>
+          <Modal
+            size="xl"
+            show={showOrder}
+            onHide={() => setShowOrder(false)}
+            aria-labelledby="example-modal-sizes-title-lg"
+          >
+            <Modal.Body>
+              <img src={mapsOder} className="w-100" />
+            </Modal.Body>
+          </Modal>
+        </div>
       </div>
     </Container>
   );

@@ -7,18 +7,16 @@ import {
   Modal,
   Navbar,
 } from "react-bootstrap";
-import logo from "../assets/logo.svg";
-import cart from "../assets/cart.svg";
-import users from "../assets/users.svg";
 import { Link, useNavigate } from "react-router-dom";
-import FormAll from "./Atoms/FormAll";
 import { LoginContext } from "../Contexts/LoginContext";
 import Login from "./Auth/Login";
 import Register from "./Auth/Register";
 
+import logo from "../assets/logo.svg";
 import userIcon from '../assets/user-icon.svg'
 import logoutIcon from '../assets/logout-icon.svg'
 import foodIcon from '../assets/food-icon.svg'
+import admin from '../assets/admin.svg'
 
 function NavbarsAdmin() {
   const navigate = useNavigate();
@@ -64,13 +62,8 @@ function NavbarsAdmin() {
             ) : (
               <div>
                 <Dropdown>
-                  <img
-                    src={cart}
-                    className="mx-3"
-                    onClick={() => navigate('/order')}
-                  />
                   <Dropdown.Toggle variant="bg-yellow" id="dropdown-basic">
-                    <img src={users} />
+                    <img src={admin} />
                   </Dropdown.Toggle>
                   <Dropdown.Menu>
                     <Dropdown.Item onClick={() => navigate('/profile')}>

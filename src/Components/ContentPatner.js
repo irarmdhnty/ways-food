@@ -1,4 +1,5 @@
 import { Card, Col, Container, Row } from "react-bootstrap"
+
 import { Patners } from '../DataDummy/Patners'
 
 function ContentPatner() {

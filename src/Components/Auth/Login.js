@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
-import { Button, Modal } from "react-bootstrap";
+import { Button, Form, Modal } from "react-bootstrap";
+
 import { LoginContext } from "../../Contexts/LoginContext";
 import FormAll from "../Atoms/FormAll";
 
 const Login = ({ show, setShow, setShowRegister }) => {
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
 
   const { isLogin, setIsLogin } = useContext(LoginContext);
 
@@ -13,20 +13,13 @@ const Login = ({ show, setShow, setShowRegister }) => {
     <>
       <Modal show={show} onHide={handleClose}>
         <Modal.Body>
-          <form>
+          <Form>
             <div className="text-yellow m-3">
               <h2>Login</h2>
             </div>
-
             <FormAll label="Email" type="email" placeholder="Email" />
-
-            <FormAll
-              label="Password"
-              type="password"
-              placeholder="Password"
-              className="border-form border-dark"
-            />
-          </form>
+            <FormAll label="Password" type="password" placeholder="Password" />
+          </Form>
           <Button
             onClick={() => {
               setIsLogin(true);

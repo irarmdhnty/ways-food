@@ -1,6 +1,7 @@
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
-import iconFile from "../../assets/icon-file.svg";
+
 import FormAll from "../../Components/Atoms/FormAll";
+import iconFile from "../../assets/icon-file.svg";
 
 const AddProduct = () => {
   return (
@@ -17,17 +18,25 @@ const AddProduct = () => {
             />
           </Col>
           <Col className="col-12 col-md-3">
-            <Form.Group className="mb-3 d-flex" controlId="formBasicEmail">
-              <Form.Control type="file" placeholder="Attach Image" hidden />
-              <Form.Label className="border-form border-dark input-img border border-1">
-                Attach Image
-              </Form.Label>
-              <img
-                src={iconFile}
-                style={{ marginLeft: "-30px", paddingBottom: "8px" }}
-              />
-            </Form.Group>
-          </Col>
+          <Form.Group
+            className="mb-3 d-flex"
+            controlId="formBasicEmail"
+            style={{ height: "90%" }}
+          >
+            <Form.Control type="file" placeholder="Attach Image" hidden />
+            <Form.Label className="d-flex align-items-center border-form border-dark input-img border border-1 ">
+              Attach Image
+            </Form.Label>
+            <img
+              src={iconFile}
+              style={{
+                marginLeft: "-30px",
+                paddingBottom: "8px",
+                width: "20px",
+              }}
+            />
+          </Form.Group>
+        </Col>
         </Row>
         <FormAll
           label="Price"

@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Form, Modal } from "react-bootstrap";
+
 import FormAll from "../Atoms/FormAll";
-import  {Login}  from './Login';
 
 function Register({show, setShow, setShowLogin}) {
   const handleClose = () => setShow(false);
@@ -35,9 +35,9 @@ function Register({show, setShow, setShowLogin}) {
                   className='mt-3'
                 />
                 <Form.Select aria-label="Default select example m-3">
-                  <option>Gender</option>
-                  <option value="1">Laki-Laki</option>
-                  <option value="2">Perempuan</option>
+                  <option hidden>Role</option>
+                  <option value="1">User</option>
+                  <option value="2">Patner</option>
                 </Form.Select>
               </div>
             </form>
