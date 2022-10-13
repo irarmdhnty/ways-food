@@ -1,16 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { Button, Modal } from "react-bootstrap";
+import { LoginContext } from "../../Contexts/LoginContext";
+import FormAll from "../Atoms/FormAll";
 
-const Login = () => {
-  const [show, setShow] = useState(false);
+const Login = ({ show, setShow, setShowRegister }) => {
   const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
-  const [isLogin, setIsLogin] = useState(false);
-
-  const [userData, setUserData] = useState({
-    email: "",
-    password: "",
-  });
+  const { isLogin, setIsLogin } = useContext(LoginContext);
 
   return (
     <>
@@ -20,23 +17,15 @@ const Login = () => {
             <div className="text-yellow m-3">
               <h2>Login</h2>
             </div>
-            <div class="m-3">
-              <input
-                type="email"
-                class="form-control"
-                id="exampleInputEmail1"
-                aria-describedby="emailHelp"
-                placeholder="email"
-              />
-            </div>
-            <div class="m-3">
-              <input
-                type="password"
-                class="form-control"
-                id="exampleInputPassword1"
-                placeholder="password"
-              />
-            </div>
+
+            <FormAll label="Email" type="email" placeholder="Email" />
+
+            <FormAll
+              label="Password"
+              type="password"
+              placeholder="Password"
+              className="border-form border-dark"
+            />
           </form>
           <Button
             onClick={() => {
@@ -49,7 +38,15 @@ const Login = () => {
           </Button>
           <p className="mt-3">
             Don't have an account ? click
-            <span className="fw-bold">Here</span>
+            <span
+              className="fw-bold"
+              onClick={() => {
+                setShow(false);
+                setShowRegister(true);
+              }}
+            >
+              Here
+            </span>
           </p>
         </Modal.Body>
       </Modal>

@@ -9,10 +9,6 @@ import FormAll from "./Atoms/FormAll";
 const FormEdit = () => {
   const navigate = useNavigate();
 
-  const saveProfile = () => {
-    navigate("/profile");
-  };
-
   return (
     <Form>
       <Row>
@@ -25,14 +21,14 @@ const FormEdit = () => {
           />
         </Col>
         <Col className="col-12 col-md-3">
-          <Form.Group className="mb-3 d-flex" controlId="formBasicEmail">
+          <Form.Group className="mb-3 d-flex" controlId="formBasicEmail" style={{  height: '90%' }}>
             <Form.Control type="file" placeholder="Attach Image" hidden />
-            <Form.Label className="border-form border-dark input-img border border-1">
+            <Form.Label className="d-flex align-items-center border-form border-dark input-img border border-1 " >
               Attach Image
             </Form.Label>
             <img
               src={iconFile}
-              style={{ marginLeft: "-30px", paddingBottom: "8px" }}
+              style={{ marginLeft: "-30px", paddingBottom: "8px", width: '20px' }}
             />
           </Form.Group>
         </Col>
@@ -59,7 +55,7 @@ const FormEdit = () => {
           />
         </Col>
         <Col className="col-12 col-md-3">
-          <Button className="btn-map">
+          <Button className="btn-map" onClick={() => }>
             Select On Map
             <img src={mapIcon} className="ms-3" />
           </Button>
@@ -69,7 +65,7 @@ const FormEdit = () => {
         <Button
           className="btn-nav w-25 mt-5 "
           type="submit"
-          onClick={saveProfile}
+          onClick={() => navigate('/profile')}
         >
           Save
         </Button>
