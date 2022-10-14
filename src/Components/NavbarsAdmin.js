@@ -70,7 +70,7 @@ function NavbarsAdmin() {
                       <img className="me-3" src={userIcon} />
                       Profile
                     </Dropdown.Item>
-                    <Dropdown.Item onClick={() => navigate('/profile')}>
+                    <Dropdown.Item onClick={() => navigate('/add-product')}>
                       <img className="me-3" src={foodIcon} />
                       Add Product
                     </Dropdown.Item>

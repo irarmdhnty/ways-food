@@ -71,12 +71,12 @@ function Navbars() {
                     className="mx-3"
                     onClick={() => navigate("/order")}
                   />
-                  <Badge
+                  {dataCart.length > 0 && <Badge
                     style={{ width: "25px", height: "20px" }}
                     className="bg-danger position-absolute badge"
                   >
                     {dataCart.length}
-                  </Badge>
+                  </Badge>}
                   <Dropdown.Toggle variant="bg-yellow" id="dropdown-basic">
                     <img src={users} />
                   </Dropdown.Toggle>
