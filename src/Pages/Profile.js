@@ -41,10 +41,10 @@ function Profile() {
             </Col>
           </Row>
         </Col>
-        <Col>
+        <Col className="col-12 col-md-6">
           <h2 className="mb-5">History Transaction</h2>
-          <div style={{ maxHeight:'300px', overflow: 'scroll' }}>
-          <Card className="shadow d-flex mb-3">
+          <div style={{ maxHeight:'250px', overflow: 'scroll' }}>
+          <Card className="shadow border border-dark d-flex mb-3">
             <Card.Body>
               <Row>
                 <Col>
@@ -61,7 +61,7 @@ function Profile() {
               </Row>
             </Card.Body>
           </Card>
-          <Card className="shadow d-flex">
+          <Card className="shadow border border-dark d-flex">
             <Card.Body>
               <Row>
                 <Col>

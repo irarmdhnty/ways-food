@@ -22,7 +22,7 @@ const Detail = () => {
                   className="bg-yellow btn-order"
                   onClick={() => {
                     setDataCart([...dataCart, {}]);
-                    console.log(dataCart);
+                    // console.log(dataCart);
                   }}
                 >
                   Order

@@ -1,18 +1,12 @@
-const Users = [
-  {
-    email: "user@example.com",
-    password: "123",
-    name: "User",
-    phone: "08230328921",
-    role: "user",
-  },
-  {
-    email: "admin@example.com",
-    password: "123",
-    name: "Admin",
-    phone: "08230328922",
-    role: "admin",
-  },
+export const User = [
+	{
+		email: 'user@gmail.com',
+		password: '123',
+		role: 'user',
+	},
+	{
+		email: 'admin@gmail.com',
+		password: '1234',
+		role: 'admin',
+	},
 ];
-
-export default Users;
