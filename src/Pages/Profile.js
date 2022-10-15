@@ -52,7 +52,7 @@ function Profile() {
                   <Card.Subtitle className="mb-2 text-muted">
                     Saturday, 12 March 2021
                   </Card.Subtitle>
-                  <Card.Text>Rp. 10.000</Card.Text>
+                  <Card.Text className="text-danger fw-bold">Total: Rp. 10.000</Card.Text>
                 </Col>
                 <Col className="ms-5" style={{ textAlign: 'end' }}>
                   <img src={logoName} />
@@ -69,7 +69,7 @@ function Profile() {
                   <Card.Subtitle className="mb-2 text-muted">
                     Saturday, 12 March 2021
                   </Card.Subtitle>
-                  <Card.Text>Rp. 10.000</Card.Text>
+                  <Card.Text className="text-danger fw-bold">Total: Rp. 10.000</Card.Text>
                 </Col>
                 <Col className=" ms-5" style={{ textAlign: 'end' }}>
                   <img src={logoName} />

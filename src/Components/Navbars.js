@@ -26,7 +26,7 @@ import admin from '../assets/admin.svg'
 function Navbars() {
   const navigate = useNavigate();
 
-  const [isLogin, setIsLogin] = useState(false);
+  const {isLogin, setIsLogin} = useContext(LoginContext);
   const { dataCart, setDataCart } = useContext(CartContext);
 
   const [userRole, setUserRole] = useState("");
@@ -72,6 +72,7 @@ function Navbars() {
                   <img
                     src={cart}
                     className="mx-3"
+                    style={{ cursor: 'pointer' }}
                     onClick={() => navigate("/order")}
                   />
                   {dataCart.length > 0 && (
@@ -94,6 +95,7 @@ function Navbars() {
                     <Dropdown.Item
                       onClick={() => {
                         setIsLogin(false);
+                        navigate("/")
                       }}
                     >
                       <img className="me-3" src={logoutIcon} />
@@ -120,6 +122,7 @@ function Navbars() {
                     <Dropdown.Divider />
                     <Dropdown.Item onClick={() => {
                       setIsLogin(false);
+                      navigate("/")
                     }}>
                     <img className="me-3" src={logoutIcon} />
                     Logout

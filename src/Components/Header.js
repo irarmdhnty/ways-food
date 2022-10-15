@@ -14,7 +14,7 @@ const Header = () => {
                             <img src={strips} className='me-4' />
                         </Col>
                         <Col>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                            <p className="ff-Avenir">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
                         </Col>
                     </Row>
                 </Col>

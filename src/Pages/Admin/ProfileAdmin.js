@@ -10,9 +10,6 @@ function ProfileAdmin() {
   const navigate = useNavigate();
   const { isLogin, setIsLogin } = useContext(LoginContext);
 
-  const editProfile = () => {
-    navigate("/edit-profile");
-  };
   return (
     <Container>
       <Row className="mt-5">
@@ -21,7 +18,7 @@ function ProfileAdmin() {
           <Row>
             <Col className="col-5 col-lg-5">
               <img alt="user" src={patner} width="210px" />
-              <Button className="btn-nav mt-3 w-100" onClick={editProfile}>
+              <Button className="btn-nav mt-3 w-100" onClick={() => navigate('/edit-admin')}>
                 Edit Profile
               </Button>
             </Col>
@@ -52,7 +49,7 @@ function ProfileAdmin() {
                   <Card.Subtitle className="mb-2 text-muted">
                     Saturday, 12 March 2021
                   </Card.Subtitle>
-                  <Card.Text>Rp. 10.000</Card.Text>
+                  <Card.Text className="text-danger fw-bold">Total: Rp. 10.000</Card.Text>
                 </Col>
                 <Col className="ms-5" style={{ textAlign: 'end' }}>
                   <img src={logoName} />
@@ -69,7 +66,7 @@ function ProfileAdmin() {
                   <Card.Subtitle className="mb-2 text-muted">
                     Saturday, 12 March 2021
                   </Card.Subtitle>
-                  <Card.Text>Rp. 10.000</Card.Text>
+                  <Card.Text className="text-danger fw-bold">Total: Rp. 10.000</Card.Text>
                 </Col>
                 <Col className="ms-5" style={{ textAlign: 'end' }}>
                   <img src={logoName} />

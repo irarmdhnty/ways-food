@@ -11,7 +11,7 @@ import Register from "./Auth/Register";
 function ContentRestaurant() {
   const navigate = useNavigate();
 
-  const [ isLogin, setIsLogin ] = useState(false);
+  const { isLogin, setIsLogin } = useContext(LoginContext);
 
   const [showLogin, setShowLogin] = useState(false);
   const [showRegister, setShowRegister] = useState(false);
@@ -25,6 +25,7 @@ function ContentRestaurant() {
             <Card
               width="18 rem"
               className="shadow"
+              style={{ cursor: 'pointer' }}
               onClick={() => {
                 !isLogin ? setShowLogin(true) : navigate("/detail");
               }}

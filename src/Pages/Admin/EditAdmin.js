@@ -95,7 +95,7 @@ function EditAdmin() {
           <Button
             className="btn-nav w-25 mt-5 "
             type="submit"
-            onClick={() => navigate("/profile")}
+            onClick={() => navigate("/profile-admin")}
           >
             Save
           </Button>

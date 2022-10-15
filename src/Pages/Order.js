@@ -80,8 +80,8 @@ function Order() {
                         />
                       </Col>
                       <Col className="col-9 ps-5 ps-lg-0">
-                        <h6 className="my-3 ff-abhaya fw-bold">{item.name}</h6>
-                        <h6 className="my-3 ff-avenir">
+                        <h6 className="my-3 fw-bold">{item.name}</h6>
+                        <h6 className="my-3">
                           <span className="m-2">-</span>
                           <Button className="bg-light border-0 rounded text-dark">
                             {item.qty}
@@ -108,12 +108,12 @@ function Order() {
               <Row className="d-flex align-items-center mt-2">
                 <Col>
                   <Row className="d-flex align-items-center text-start">
-                    <Col className="ff-abhaya">
+                    <Col>
                       <h6>Subtotal</h6>
                       <h6>Qty</h6>
                       <h6>Ongkir</h6>
                     </Col>
-                    <Col className="ff-abhaya text-end">
+                    <Col className="text-end">
                       <h6>Rp. 60.000</h6>
                       <h6>2</h6>
                       <h6>Rp. 60.000</h6>
@@ -121,16 +121,16 @@ function Order() {
                   </Row>
                 </Col>
               </Row>
-              <hr />
+              <hr style={{ marginTop: '30px' }} />
             </Col>
             <Col>
               <Row className="d-flex align-items-center">
                 <Col>
                   <Row className="d-flex align-items-center text-start text-danger">
-                    <Col className="ff-abhaya">
+                    <Col>
                       <h6>Total</h6>
                     </Col>
-                    <Col className="col-4 text-end ff-avenir">
+                    <Col className="col-4 text-end">
                       <h6>Rp. 70.000</h6>
                     </Col>
                   </Row>

@@ -30,8 +30,8 @@ const FormEdit = () => {
             controlId="formBasicEmail"
             style={{ height: "90%" }}
           >
-            <Form.Control type="file" placeholder="Attach Image" hidden />
-            <Form.Label className="d-flex align-items-center border-form border-dark input-img border border-1 ">
+            <Form.Control type="file" placeholder="Attach Image" hidden  />
+            <Form.Label className="d-flex align-items-center border-form border-dark input-img border border-1" >
               Attach Image
             </Form.Label>
             <img
