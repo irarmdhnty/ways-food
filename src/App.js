@@ -1,5 +1,5 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useState } from "react";
+import { BrowserRouter as Router, Routes, Route, Outlet, Navigate } from "react-router-dom";
+import { Component, useContext, useState } from "react";
 
 import "./styles/style.css";
 import Home from "./Pages/Home";
@@ -17,6 +17,11 @@ import { LoginContext } from "./Contexts/LoginContext";
 import { CartContext } from "./Contexts/CartContext";
 import EditAdmin from "./Pages/Admin/EditAdmin";
 
+const PrivateRoute = ({elemet: Component, ...rest}) => {
+  const {isLogin, setIsLogin} = useContext(LoginContext);
+
+  return isLogin ? <Outlet /> : <Navigate to='/' />
+}
 
 function App() {
   const [isLogin, setIsLogin] = useState(false);
@@ -28,15 +33,17 @@ function App() {
         <Router>
           <Navbars />
           <Routes>
-            <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/" element={<PrivateRoute/>}>
             <Route path="/detail" element={<Detail />} />
-            <Route path="/order" element={<Order />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/order" element={<Order />} />
             <Route path="/edit-profile" element={<EditProfile />} />
             <Route path="/home-admin" element={<HomeAdmin />} />
             <Route path="/add-product" element={<AddProduct />} />
             <Route path="/profile-admin" element={<ProfileAdmin />} />
             <Route path='/edit-admin' element={<EditAdmin />} />
+          </Route>
           </Routes>
         </Router>
       </CartContext.Provider>

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import { User } from "../../DataDummy/Users";
 
 import FormAll from "../Atoms/FormAll";
@@ -12,6 +13,7 @@ const Login = ({
   setIsLogin,
   setUserRole,
 }) => {
+  const navigate = useNavigate()
   const handleClose = () => setShow(false);
 
   const [userLogin, setUserLogin] = useState({
@@ -86,6 +88,8 @@ const Login = ({
               hasLogin.status && setIsLogin(true);
               hasLogin.status && setUserRole(hasLogin.user.role);
               hasLogin.status && setShow(false);
+              hasLogin.status && setStatusMessage('')
+              hasLogin.user.role == 'admin' && navigate('/home-admin')
             }}
             className="btn-order btn-nav px-5"
           >
