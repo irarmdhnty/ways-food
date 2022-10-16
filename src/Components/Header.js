@@ -1,4 +1,4 @@
-import { Col, Container, Row } from "react-bootstrap"
+import { Col, Container, Image, Row } from "react-bootstrap"
 
 import pizza from '../assets/logo-pizza.svg'
 import strips from '../assets/strips.svg'
@@ -18,8 +18,8 @@ const Header = () => {
                         </Col>
                     </Row>
                 </Col>
-                <Col md='6'>
-                    <img src={pizza} className='my-5 px-5' />
+                <Col>
+                    <Image src={pizza} className='my-5 px-5' />
                 </Col>
             </Row>
         </Container>

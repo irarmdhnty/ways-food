@@ -20,12 +20,13 @@ const Login = ({
     role: "user",
   });
 
+  const [statusMessage, setStatusMessage] = useState("");
+
   function successLogin(email, password) {
-    let statusMessage;
     const emailCheck = User.filter((field) => field.email === email);
 
     if (emailCheck.length === 0) {
-      statusMessage = "Email belum terdaftar";
+      setStatusMessage("Email belum terdaftar");
       return {
         status: false,
         message: statusMessage,
@@ -35,13 +36,13 @@ const Login = ({
     const result = User.filter((field) => field.password === password);
 
     if (result.length === 0) {
-      statusMessage = "Password Anda Salah";
+      setStatusMessage("Password Anda Salah");
       return {
         status: false,
         message: statusMessage,
       };
     }
-    statusMessage = "Login success";
+    setStatusMessage("Login success");
     return {
       status: true,
       message: statusMessage,
@@ -53,6 +54,9 @@ const Login = ({
     <>
       <Modal show={show} onHide={handleClose}>
         <Modal.Body>
+        {statusMessage != "" && 
+          <p className={!isLogin ? 'text-danger' : 'text-success'}>{statusMessage}</p>
+        }
           <Form>
             <div className="text-yellow m-3">
               <h2>Login</h2>
@@ -70,7 +74,7 @@ const Login = ({
               label="Password"
               type="password"
               placeholder="Password"
-              value={User.password}
+              value={userLogin.password}
               onChange={(e) =>
                 setUserLogin({ ...userLogin, password: e.target.value })
               }
@@ -79,15 +83,9 @@ const Login = ({
           <Button
             onClick={() => {
               let hasLogin = successLogin(userLogin.email, userLogin.password);
-              if (hasLogin.status) {
-                console.log("success login");
-              } else {
-                console.log("failed login");
-              }
-              setUserRole(hasLogin.user.role);
-              setIsLogin(true);
-
-              setShow(false);
+              hasLogin.status && setIsLogin(true);
+              hasLogin.status && setUserRole(hasLogin.user.role);
+              hasLogin.status && setShow(false);
             }}
             className="btn-order btn-nav px-5"
           >
