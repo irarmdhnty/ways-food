@@ -114,9 +114,9 @@ function Order() {
                       <h6>Ongkir</h6>
                     </Col>
                     <Col className="text-end">
-                      <h6>Rp. 60.000</h6>
+                      <h6>Rp. 30.000</h6>
                       <h6>2</h6>
-                      <h6>Rp. 60.000</h6>
+                      <h6>Rp. 10.000</h6>
                     </Col>
                   </Row>
                 </Col>
@@ -131,7 +131,7 @@ function Order() {
                       <h6>Total</h6>
                     </Col>
                     <Col className="col-4 text-end">
-                      <h6>Rp. 70.000</h6>
+                      <h6>Rp. 40.000</h6>
                     </Col>
                   </Row>
                 </Col>

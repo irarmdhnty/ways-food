@@ -2,8 +2,11 @@ import { Button, Col, Container, Form, Row } from "react-bootstrap";
 
 import FormAll from "../../Components/Atoms/FormAll";
 import iconFile from "../../assets/icon-file.svg";
+import { useNavigate } from "react-router-dom";
 
 const AddProduct = () => {
+  const navigate = useNavigate();
+  
   return (
     <Container>
       <h2 className="my-5">Add Product</h2>
@@ -45,7 +48,7 @@ const AddProduct = () => {
           className="border-form border-dark"
         />
         <div className="d-flex justify-content-end">
-          <Button className="btn-nav w-25 mt-5 " type="submit">
+          <Button className="btn-nav w-25 mt-5 " type="submit" onClick={() => navigate('/home-admin')}>
             Save
           </Button>
         </div>

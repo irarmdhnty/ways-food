@@ -13,7 +13,7 @@ const Login = ({
   setIsLogin,
   setUserRole,
 }) => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const handleClose = () => setShow(false);
 
   const [userLogin, setUserLogin] = useState({
@@ -56,9 +56,11 @@ const Login = ({
     <>
       <Modal show={show} onHide={handleClose}>
         <Modal.Body>
-        {statusMessage != "" && 
-          <p className={!isLogin ? 'text-danger' : 'text-success'}>{statusMessage}</p>
-        }
+          {statusMessage != "" && (
+            <p className={!isLogin ? "text-danger" : "text-success"}>
+              {statusMessage}
+            </p>
+          )}
           <Form>
             <div className="text-yellow m-3">
               <h2>Login</h2>
@@ -83,15 +85,15 @@ const Login = ({
             />
           </Form>
           <Button
+            className="btn-order btn-nav px-5"
             onClick={() => {
               let hasLogin = successLogin(userLogin.email, userLogin.password);
               hasLogin.status && setIsLogin(true);
               hasLogin.status && setUserRole(hasLogin.user.role);
               hasLogin.status && setShow(false);
-              hasLogin.status && setStatusMessage('')
-              hasLogin.user.role == 'admin' && navigate('/home-admin')
+              hasLogin.status && setStatusMessage("");
+              hasLogin.user.role === "admin" && navigate("/home-admin");
             }}
-            className="btn-order btn-nav px-5"
           >
             Login
           </Button>

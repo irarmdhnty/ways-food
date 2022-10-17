@@ -1,12 +1,12 @@
 export const User = [
 	{
 		email: 'user@gmail.com',
-		password: '123',
+		password: 'user',
 		role: 'user',
 	},
 	{
 		email: 'admin@gmail.com',
-		password: '1234',
+		password: 'admin',
 		role: 'admin',
 	},
 ];

@@ -10,14 +10,13 @@ import Order from "./Pages/Order";
 import EditProfile from "./Pages/EditProfile";
 import HomeAdmin from "./Pages/Admin/HomeAdmin";
 import AddProduct from "./Pages/Admin/AddProduct";
-import NavbarsAdmin from "./Components/NavbarsAdmin";
 import ProfileAdmin from './Pages/Admin/ProfileAdmin'
 
 import { LoginContext } from "./Contexts/LoginContext";
 import { CartContext } from "./Contexts/CartContext";
 import EditAdmin from "./Pages/Admin/EditAdmin";
 
-const PrivateRoute = ({elemet: Component, ...rest}) => {
+const PrivateRoute = () => {
   const {isLogin, setIsLogin} = useContext(LoginContext);
 
   return isLogin ? <Outlet /> : <Navigate to='/' />
